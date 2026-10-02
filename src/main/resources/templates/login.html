@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login — CampusFix</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><div class="auth"><div class="auth-card"><a class="logo" href="/">Campus<span>Fix</span></a><h1 th:text="${role == 'admin'} ? 'Admin Login' : 'Student Login'">Login</h1><p style="color:#667085">Sign in to continue to CampusFix.</p>
+<div class="error" th:if="${error}" th:text="${error}"></div>
+<form method="post" action="/login"><input type="hidden" name="role" th:value="${role}">
+<div class="field" style="margin-bottom:15px"><label>Email</label><input name="email" type="email" required placeholder="you@college.edu"></div>
+<div class="field" style="margin-bottom:18px"><label>Password</label><input name="password" type="password" required placeholder="••••••••"></div>
+<button class="btn" style="width:100%">Login</button></form>
+<div th:if="${role == 'student'}" style="margin-top:18px;text-align:center">New student? <a style="color:#2563eb;font-weight:700" href="/register">Create account</a></div>
+<hr style="border:0;border-top:1px solid #eee;margin:24px 0">
+<div style="font-size:12px;color:#667085">Demo student: student@campusfix.com / student123<br>Demo admin: admin@campusfix.com / admin123</div>
+</div></div></body></html>

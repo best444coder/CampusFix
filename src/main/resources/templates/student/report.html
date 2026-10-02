@@ -1,0 +1,13 @@
+<!DOCTYPE html><html xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Report a Problem</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<div th:replace="~{fragments/student-nav}"></div><div class="sidebar-layout"><aside class="sidebar"><a href="/student/dashboard">Dashboard</a><a class="active" href="/student/report">Report a Problem</a><a href="/student/complaints">My Complaints</a><a href="/student/notifications">Notifications</a></aside>
+<main class="main"><div class="page-head"><div><h1>Report a Problem</h1><p style="color:#667085">Give us the details so the right department can fix it.</p></div></div>
+<div class="form-card"><form method="post" action="/student/report" enctype="multipart/form-data"><div class="form-grid">
+<div class="field"><label>Category</label><select name="category" required><option value="">Select category</option><option>Electrical</option><option>Plumbing</option><option>Classroom</option><option>Laboratory</option><option>Wi-Fi / Internet</option><option>Furniture</option><option>Projector / AV Equipment</option><option>Washroom / Sanitation</option><option>Water Supply</option><option>Other</option></select></div>
+<div class="field"><label>Problem Title</label><input name="title" required placeholder="e.g. Projector not working"></div>
+<div class="field"><label>Building / Block</label><input name="building" required placeholder="e.g. Block B"></div>
+<div class="field"><label>Room Number</label><input name="roomNumber" placeholder="e.g. Lab 2"></div>
+<div class="field full"><label>Detailed Description</label><textarea name="description" required placeholder="Describe the issue clearly..."></textarea></div>
+<div class="field full"><label>Photo Evidence <span style="font-weight:400;color:#667085">(optional, max 5 MB)</span></label><input id="photo" type="file" name="image" accept="image/*"><div id="preview"></div></div>
+</div><button class="btn" style="margin-top:20px">Submit Complaint</button></form></div></main></div>
+<script>document.getElementById('photo').addEventListener('change',e=>{const f=e.target.files[0];if(f){const i=document.createElement('img');i.src=URL.createObjectURL(f);i.style.maxWidth='240px';i.style.marginTop='12px';i.style.borderRadius='10px';document.getElementById('preview').innerHTML='';document.getElementById('preview').appendChild(i)}})</script>
+</body></html>

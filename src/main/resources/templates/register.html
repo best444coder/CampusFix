@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Register — CampusFix</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><div class="auth"><div class="auth-card"><a class="logo" href="/">Campus<span>Fix</span></a><h1>Create Student Account</h1><p style="color:#667085">Join CampusFix to report and track campus problems.</p>
+<div class="error" th:if="${error}" th:text="${error}"></div>
+<form method="post" action="/register">
+<div class="field" style="margin-bottom:14px"><label>Full Name</label><input name="name" required></div>
+<div class="field" style="margin-bottom:14px"><label>Email</label><input name="email" type="email" required></div>
+<div class="field" style="margin-bottom:18px"><label>Password</label><input name="password" type="password" minlength="6" required></div>
+<button class="btn" style="width:100%">Create Account</button></form>
+<p style="text-align:center">Already registered? <a href="/login?role=student" style="color:#2563eb;font-weight:700">Login</a></p>
+</div></div></body></html>

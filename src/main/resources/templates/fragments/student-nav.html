@@ -1,0 +1,7 @@
+<nav class="nav">
+    <a class="logo" href="/student/dashboard">Campus<span>Fix</span></a>
+    <div class="navlinks">
+        <span th:text="${user != null ? user.name : 'Student'}"></span>        <a href="/student/notifications">Notifications</a>
+        <a href="/logout" class="btn secondary">Logout</a>
+    </div>
+</nav>
